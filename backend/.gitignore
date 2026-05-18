@@ -1,0 +1,24 @@
+# 1. 가상환경
+venv/
+env/
+.venv/
+
+# 2. Python 캐시
+__pycache__/
+*.pyc
+
+# 3. DB (로컬 데이터)
+instance/
+*.db
+*.sqlite3
+
+# 4. 환경변수 (JWT, SECRET KEY)
+.env
+
+# 5. IDE 설정
+.vscode/
+.idea/
+
+# 6. OS 파일
+.DS_Store
+Thumbs.db
