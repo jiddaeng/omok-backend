@@ -22,6 +22,7 @@ def register():
     if existing:
         return jsonify({"message": "이미 존재하는 아이디입니다."}), 409
 
+    # wins, losses는 기본값 0, id는 primary key
     user = User(
         username=username,
         password=generate_password_hash(password)
@@ -49,7 +50,7 @@ def login():
         return jsonify({"message": "비밀번호가 틀렸습니다."}), 401
 
     token = create_access_token(identity=str(user.id))
-
+    
     return jsonify({
         "accessToken": token
     }), 200

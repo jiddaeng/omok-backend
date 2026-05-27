@@ -17,6 +17,7 @@ def profile():
 
     return jsonify({
         "username": user.username,
+        "id": user_id,
         "wins": user.wins,
         "losses": user.losses
     }), 200
