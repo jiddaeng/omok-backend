@@ -27,6 +27,10 @@ def create_app():
     with app.app_context():
         db.create_all()
 
+    @app.route("/")
+    def home(): 
+        return {"status": "alive"}
+
     return app
 
 
