@@ -13,12 +13,12 @@ BOARD_SIZE = 9
 
 
 @socketio.on("connect")
-def handle_connect(auth=None):
-    token = auth.get("token") if auth else None
-
-    if not token:
-        print("Connect rejected: No token")
+def handle_connect(auth):
+    if not auth:
+        print("No auth")
         return False
+
+    token = auth.get("token")
 
     try:
         decoded = decode_token(token)
